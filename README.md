@@ -1,3 +1,4 @@
+Step 1:
 Run the following command:
 py -m pip install flask numpy pandas matplotlib scikit-learn redis
 
@@ -9,4 +10,9 @@ py -m pip install requests
 
 Run Simulated traffic:
 python simulate_requests.py
+
+Step 2:
+Load and preview data:
+py data_preprocessing.py
+
 

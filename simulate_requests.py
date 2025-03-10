@@ -13,7 +13,7 @@ RESOURCES = ["/index.html", "/style.css", "/script.js", "/image1.jpg", "/image2.
 request_log = {}
 
 # Simulating 1000 requests
-for _ in range(1000):
+for _ in range(100):
     resource = random.choice(RESOURCES)  # Randomly select a resource from the list
     
     try:

@@ -2,11 +2,13 @@ import pandas as pd
 import heapq
 from collections import deque
 
-# Load the processed request dataset
-df = pd.read_csv("processed_request_data.csv")
+df = pd.read_csv("processed_request_data.csv")  # Load dataset
 
-# Define cache capacity (same as SGD model)
-CACHE_CAPACITY = 40
+TOTAL_DATASET_SIZE = df["size"].sum()  # Sum of all file sizes
+CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)  # Set cache to 20% of total size
+
+print(f"Total dataset size: {TOTAL_DATASET_SIZE} KB")
+print(f"New cache capacity: {CACHE_CAPACITY} KB")
 
 # LRU Cache Implementation
 def lru_caching(df):

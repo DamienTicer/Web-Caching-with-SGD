@@ -2,52 +2,63 @@ import requests
 import random
 import time
 import pandas as pd
+import numpy as np
+import json
 
 # Base URL of the Flask web server
 BASE_URL = "http://127.0.0.1:5000"
 
-# List of available web resources that can be requested
-RESOURCES = ["/index.html", "/style.css", "/script.js", "/image1.jpg", "/image2.jpg", "/video.mp4"]
+# Generate a larger set of web resources with varied sizes
+categories = {
+    "small_images": {"count": 30, "size_range": (10, 50)},  # KB
+    "large_images": {"count": 20, "size_range": (100, 500)},  # KB
+    "videos": {"count": 10, "size_range": (1000, 50000)},  # KB
+    "scripts": {"count": 20, "size_range": (5, 30)},  # KB
+    "css": {"count": 20, "size_range": (5, 30)},  # KB
+}
 
-# Dictionary to store the number of times each resource is requested
-request_log = {}
+web_resources = {}  # Initialize global dictionary
 
-# Simulating 1000 requests
-for _ in range(300):
-    resource = random.choice(RESOURCES)  # Randomly select a resource from the list
-    
-    if _ < 150:
-        resource = random.choice(["/script.js", "/style.css", "/index.html"])
-    else:
-        resource = random.choice(["/video.mp4", "/image1.jpg"])  # Late burst of new accesses
-    response = requests.get(BASE_URL + resource)
-    request_log[resource] = request_log.get(resource, 0) + 1
-    time.sleep(random.uniform(0.1, 0.5))
+# Generate resource names and sizes
+resource_index = 1
+for category, properties in categories.items():
+    for _ in range(properties["count"]):
+        size = random.randint(*properties["size_range"])  # Assign a random size
+        latency = random.uniform(0.05, 1.5)  # Assign a random latency between 50ms-1.5s
+        resource_name = f"{category}_{resource_index}.dat"  # Unique filename
+        web_resources[f"/{resource_name}"] = {"size": size, "latency": latency}
+        resource_index += 1
 
-    
+# Save dynamically generated resources so the Flask server can load them
+with open("web_resources.json", "w") as f:
+    json.dump(web_resources, f, indent=4)
+
+print("Web resources saved to web_resources.json")
+
+# Simulating request frequencies using a Zipfian (long-tail) distribution
+num_requests = 300  # Total simulated requests
+resource_list = list(web_resources.keys())
+
+# Generate skewed request frequencies
+zipf_distribution = np.random.zipf(1.5, num_requests)
+zipf_distribution = np.clip(zipf_distribution, 1, len(resource_list))  # Limit to valid indexes
+
+# Dictionary to track requests
+request_log = {resource: 0 for resource in resource_list}
+
+# Generate requests based on skewed distribution
+for index in zipf_distribution:
+    resource = resource_list[index - 1]
     try:
-        # Send a GET request to the server
-        response = requests.get(BASE_URL + resource)
-        
-        # If the request is successful (status code 200), update the request log
+        response = requests.get(BASE_URL + resource)  # Simulate request
         if response.status_code == 200:
-            request_log[resource] = request_log.get(resource, 0) + 1
-        else:
-            print(f"Warning: {resource} returned status code {response.status_code}")
-
+            request_log[resource] += 1
     except requests.exceptions.RequestException as e:
-        print(f"Error: Failed to fetch {resource} - {e}")
+        print(f"Error fetching {resource}: {e}")
 
-    # Add a small delay to simulate real-world user behavior
-    time.sleep(random.uniform(0.1, 0.5))  
+    time.sleep(random.uniform(0.1, 0.5))  # Random delay
 
-# Print the request frequency log
-print("Request simulation complete. Frequencies:", request_log)
-
-# Convert the request log dictionary into a Pandas DataFrame
+# Save request log to CSV
 df = pd.DataFrame(list(request_log.items()), columns=["resource", "frequency"])
-
-# Save the request frequency data to a CSV file
 df.to_csv("request_data.csv", index=False)
-
 print("Request data saved to request_data.csv")

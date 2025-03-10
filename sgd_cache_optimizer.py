@@ -1,11 +1,14 @@
 import pandas as pd
 import numpy as np
 
-# Load the normalized request data
-df = pd.read_csv("normalized_request_data.csv")
+df = pd.read_csv("processed_request_data.csv")  # Load dataset
 
-# Define cache capacity (maximum total size allowed)
-CACHE_CAPACITY = 40  # Adjust as needed
+TOTAL_DATASET_SIZE = df["size"].sum()  # Sum of all file sizes
+CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)  # Set cache to 20% of total size
+
+print(f"Total dataset size: {TOTAL_DATASET_SIZE} KB")
+print(f"New cache capacity: {CACHE_CAPACITY} KB")
+
 
 # Learning rate for SGD updates
 LEARNING_RATE = 0.01

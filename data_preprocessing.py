@@ -1,55 +1,35 @@
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+import random
 
-# Load request data from CSV
+# Load request data
 df = pd.read_csv("request_data.csv")
 
-# Display the first few rows
-print("Dataset Preview:")
-print(df.head())
+# Generate realistic size and latency dynamically based on resource categories
+def assign_size_and_latency(resource):
+    if "small_images" in resource:
+        size = random.randint(10, 50)  # Small images (KB)
+        latency = round(random.uniform(0.05, 0.2), 2)  # Fast retrieval
+    elif "large_images" in resource:
+        size = random.randint(100, 500)  # Large images (KB)
+        latency = round(random.uniform(0.2, 0.5), 2)  # Medium latency
+    elif "videos" in resource:
+        size = random.randint(1000, 50000)  # Video files (KB)
+        latency = round(random.uniform(0.5, 2.0), 2)  # High latency
+    elif "scripts" in resource:
+        size = random.randint(5, 30)  # JavaScript files (KB)
+        latency = round(random.uniform(0.03, 0.1), 2)  # Very fast retrieval
+    elif "css" in resource:
+        size = random.randint(5, 30)  # CSS files (KB)
+        latency = round(random.uniform(0.03, 0.1), 2)  # Very fast retrieval
+    else:
+        size = random.randint(10, 500)  # Default fallback
+        latency = round(random.uniform(0.1, 0.5), 2)  
 
-# Display summary statistics
-print("\nDataset Info:")
-print(df.info())
+    return pd.Series([size, latency])
 
-# Check for missing values
-print("\nMissing Values:")
-print(df.isnull().sum())
+# Apply function to dynamically assign sizes and latencies
+df[["size", "latency"]] = df["resource"].apply(assign_size_and_latency)
 
-# Handle missing values (if any)
-df.dropna(inplace=True)  # Removes rows with missing values
-
-# Ensure "frequency" column is numeric
-df["frequency"] = pd.to_numeric(df["frequency"], errors="coerce")
-
-# Save cleaned data
-df.to_csv("cleaned_request_data.csv", index=False)
-print("Cleaned dataset saved as cleaned_request_data.csv")
-
-# Simulated database of web resources with sizes and latencies
-web_resources = {
-    "/index.html": {"size": 10, "latency": 0.1},
-    "/style.css": {"size": 5, "latency": 0.05},
-    "/script.js": {"size": 8, "latency": 0.08},
-    "/image1.jpg": {"size": 50, "latency": 0.3},
-    "/image2.jpg": {"size": 45, "latency": 0.25},
-    "/video.mp4": {"size": 200, "latency": 1.0}
-}
-
-# Map size and latency to dataset
-df["size"] = df["resource"].map(lambda x: web_resources[x]["size"])
-df["latency"] = df["resource"].map(lambda x: web_resources[x]["latency"])
-
-# Save the enriched dataset
+# Save the updated dataset
 df.to_csv("processed_request_data.csv", index=False)
-print("Processed dataset saved as processed_request_data.csv")
-
-# Initialize scaler
-scaler = MinMaxScaler()
-
-# Normalize frequency and latency
-df[["frequency", "latency"]] = scaler.fit_transform(df[["frequency", "latency"]])
-
-# Save the normalized dataset
-df.to_csv("normalized_request_data.csv", index=False)
-print("Normalized dataset saved as normalized_request_data.csv")
+print("Processed dataset saved to processed_request_data.csv")

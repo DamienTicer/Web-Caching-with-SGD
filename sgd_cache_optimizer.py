@@ -5,13 +5,13 @@ import numpy as np
 df = pd.read_csv("normalized_request_data.csv")
 
 # Define cache capacity (maximum total size allowed)
-CACHE_CAPACITY = 100  # Adjust as needed
+CACHE_CAPACITY = 40  # Adjust as needed
 
 # Learning rate for SGD updates
 LEARNING_RATE = 0.01
 
 # Regularization penalty to enforce cache size constraint
-LAMBDA = 10  
+LAMBDA = 5
 
 # Initialize cache selection probabilities (randomized start)
 df["cache_prob"] = np.random.uniform(0.2, 0.8, len(df))  # Between 20% and 80% probability

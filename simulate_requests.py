@@ -13,8 +13,17 @@ RESOURCES = ["/index.html", "/style.css", "/script.js", "/image1.jpg", "/image2.
 request_log = {}
 
 # Simulating 1000 requests
-for _ in range(100):
+for _ in range(300):
     resource = random.choice(RESOURCES)  # Randomly select a resource from the list
+    
+    if _ < 150:
+        resource = random.choice(["/script.js", "/style.css", "/index.html"])
+    else:
+        resource = random.choice(["/video.mp4", "/image1.jpg"])  # Late burst of new accesses
+    response = requests.get(BASE_URL + resource)
+    request_log[resource] = request_log.get(resource, 0) + 1
+    time.sleep(random.uniform(0.1, 0.5))
+
     
     try:
         # Send a GET request to the server

@@ -1,31 +1,40 @@
 import pandas as pd
 import heapq
 from collections import deque
+import json
 
-df = pd.read_csv("processed_request_data.csv")  # Load dataset
+# Open output file for writing logs
+output_file = open("cache_baselines_output.txt", "w")
 
-TOTAL_DATASET_SIZE = df["size"].sum()  # Sum of all file sizes
-CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)  # Set cache to 20% of total size
+# Helper function to write logs to file
+def log(msg):
+    output_file.write(msg + "\n")
 
-print(f"Total dataset size: {TOTAL_DATASET_SIZE} KB")
-print(f"New cache capacity: {CACHE_CAPACITY} KB")
+# Load dataset
+df = pd.read_csv("processed_request_data.csv")
+
+TOTAL_DATASET_SIZE = df["size"].sum()
+CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)
+
+log(f"Total dataset size: {TOTAL_DATASET_SIZE} KB")
+log(f"New cache capacity: {CACHE_CAPACITY} KB")
 
 # LRU Cache Implementation
 def lru_caching(df):
-    cache = deque()  # LRU uses a queue for tracking order of use
+    cache = deque()
     cache_size = 0
     cache_set = set()
 
     for index, row in df.iterrows():
         if row["resource"] in cache_set:
-            cache.remove(row["resource"])  # Move accessed item to most recent
+            cache.remove(row["resource"])
         elif cache_size + row["size"] <= CACHE_CAPACITY:
             cache.append(row["resource"])
             cache_set.add(row["resource"])
             cache_size += row["size"]
 
         if cache_size > CACHE_CAPACITY:
-            removed = cache.popleft()  # Evict the least recently used item
+            removed = cache.popleft()
             cache_set.remove(removed)
             cache_size -= df[df["resource"] == removed]["size"].values[0]
 
@@ -37,18 +46,17 @@ def lfu_caching(df):
     cache_size = 0
     cache_set = set()
 
-    # Sort by frequency (highest first)
-    df = df.sort_values(by="frequency", ascending=False)
+    df_sorted = df.sort_values(by="frequency", ascending=False)
 
-    print("\nLFU Sorted Resources (Highest Frequency First):")
-    print(df[["resource", "frequency"]].sort_values(by="frequency", ascending=False))
+    log("\nLFU Sorted Resources (Highest Frequency First):")
+    log(df_sorted[["resource", "frequency"]].to_string(index=False))
 
-    for index, row in df.iterrows():
+    for index, row in df_sorted.iterrows():
         if cache_size + row["size"] <= CACHE_CAPACITY:
             cache.append(row["resource"])
             cache_set.add(row["resource"])
             cache_size += row["size"]
-    
+
     return cache
 
 # Greedy Knapsack Caching
@@ -57,22 +65,21 @@ def knapsack_caching(df):
     cache_size = 0
     cache_set = set()
 
-    # Compute value-to-size ratio and sort by it
-    df["value_ratio"] = (df["frequency"] / df["size"]) * (1/ df["latency"] + 1)
-    df = df.sort_values(by="value_ratio", ascending=False)
+    df["value_ratio"] = (df["frequency"] / df["size"]) * (1 / df["latency"] + 1)
+    df_sorted = df.sort_values(by="value_ratio", ascending=False)
 
-    print("\nGreedy Knapsack Sorted Resources (Highest Value-to-Size Ratio First):")
-    print(df[["resource", "value_ratio"]].sort_values(by="value_ratio", ascending=False))
+    log("\nGreedy Knapsack Sorted Resources (Highest Value-to-Size Ratio First):")
+    log(df_sorted[["resource", "value_ratio"]].to_string(index=False))
 
-    for index, row in df.iterrows():
+    for index, row in df_sorted.iterrows():
         if cache_size + row["size"] <= CACHE_CAPACITY:
             cache.append(row["resource"])
             cache_set.add(row["resource"])
             cache_size += row["size"]
-    
+
     return cache
 
-# Run all caching methods
+# Execute caching methods
 lru_cache = lru_caching(df)
 lfu_cache = lfu_caching(df)
 knapsack_cache = knapsack_caching(df)
@@ -89,14 +96,16 @@ results = {
     "SGD-Based": sgd_cache
 }
 
-import json
 with open("cache_results.json", "w") as f:
     json.dump(results, f)
 
-print("Cache comparison results saved.")
+log("Cache comparison results saved.")
 
-# Print the cache selections for debugging
-print("\nLRU Cache:", lru_cache)
-print("\nLFU Cache:", lfu_cache)
-print("\nGreedy Knapsack Cache:", knapsack_cache)
-print("\nSGD-Based Cache:", sgd_cache)
+# Log cache selections for debugging
+log("\nLRU Cache: " + str(lru_cache))
+log("\nLFU Cache: " + str(lfu_cache))
+log("\nGreedy Knapsack Cache: " + str(knapsack_cache))
+log("\nSGD-Based Cache: " + str(sgd_cache))
+
+# Close output file
+output_file.close()

@@ -37,6 +37,7 @@ debug.log
 *.csv
 *.json
 *.sqlite
+*.png
 data/
 request_data.csv
 

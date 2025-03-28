@@ -1,4 +1,3 @@
-Step 1:
 Run the following command:
 py -m pip install flask numpy pandas matplotlib scikit-learn redis
 py -m pip install tqdm
@@ -10,6 +9,14 @@ py server.py
 Run Simulated traffic:
 python simulate_requests.py
 
-Step 2:
 Load and preview data:
 py data_preprocessing.py
+
+SGD Cache optimizer:
+py sgd_cache_optimizer.py
+
+Cache baselines:
+py cache_baselines.py
+
+Analyze results:
+py analyze_results.py

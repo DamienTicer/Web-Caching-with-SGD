@@ -38,6 +38,7 @@ debug.log
 *.json
 *.sqlite
 *.png
+*.txt
 data/
 request_data.csv
 

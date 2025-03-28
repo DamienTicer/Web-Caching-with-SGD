@@ -41,6 +41,9 @@ print("Performance metrics saved to performance_metrics.csv")
 print("\nPerformance Metrics:")
 print(metrics_df)
 
+# Set dark theme style globally
+plt.style.use('dark_background')
+
 # Visualization: Cache Hit Rate
 plt.figure(figsize=(8,5))
 plt.bar(metrics.keys(), metrics_df["Cache Hit Rate (%)"], color=["blue", "green", "red", "purple"])

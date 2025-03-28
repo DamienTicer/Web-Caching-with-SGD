@@ -28,13 +28,26 @@ def compute_latency_reduction(cache, df):
 
 # Compute cache size usage
 metrics = {}
+breakdown_lines = []
+
 for method, cache in cache_results.items():
+    cache_df = df[df["resource"].isin(cache)]
+    cache_usage = cache_df["size"].sum()
+
     metrics[method] = {
         "Cache Hit Rate (%)": compute_cache_hit_rate(cache, df),
         "Latency Reduction (%)": compute_latency_reduction(cache, df),
-        "Cache Usage (KB)": df[df["resource"].isin(cache)]["size"].sum(),
+        "Cache Usage (KB)": cache_usage,
         "Max Cache Size (KB)": CACHE_CAPACITY_KB
     }
+
+    # Add detailed breakdown to log
+    breakdown_lines.append(f"Method: {method}")
+    breakdown_lines.append("Resources Cached (resource: size KB):")
+    for _, row in cache_df.iterrows():
+        breakdown_lines.append(f"  {row['resource']}: {row['size']} KB")
+    breakdown_lines.append(f"Total Cache Usage: {cache_usage:.2f} KB")
+    breakdown_lines.append("\n")
 
 # Convert metrics to DataFrame and save
 metrics_df = pd.DataFrame.from_dict(metrics, orient="index")
@@ -43,6 +56,10 @@ metrics_df.to_csv("performance_metrics.csv")
 # Save comprehensive metrics table to a separate file
 with open("comprehensive_metrics.txt", "w") as file:
     file.write(metrics_df.to_string())
+
+# Save cache usage breakdown
+with open("cache_usage_breakdown.txt", "w") as f:
+    f.write("\n".join(breakdown_lines))
 
 # Global dark theme style
 plt.style.use('dark_background')

@@ -11,7 +11,7 @@ print(f"New cache capacity: {CACHE_CAPACITY} KB")
 
 
 # Learning rate for SGD updates
-LEARNING_RATE = 0.01
+LEARNING_RATE = 0.001
 
 # Regularization penalty to enforce cache size constraint
 LAMBDA = 5

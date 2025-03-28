@@ -6,7 +6,7 @@ import signal
 import os
 
 # Number of iterations
-NUM_ITERATIONS = 100
+NUM_ITERATIONS = 5
 
 # File paths
 METRICS_FILE = "cumulative_performance_metrics.csv"

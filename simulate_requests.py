@@ -37,7 +37,7 @@ with open("web_resources.json", "w") as f:
 print("Web resources saved to web_resources.json")
 
 # Simulating request frequencies using a Zipfian (long-tail) distribution
-num_requests = 300  # Total simulated requests
+num_requests = 100  # Total simulated requests
 resource_list = list(web_resources.keys())
 
 # Generate skewed request frequencies

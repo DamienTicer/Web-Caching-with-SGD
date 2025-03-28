@@ -4,6 +4,7 @@ import time
 import pandas as pd
 import numpy as np
 import json
+from tqdm import tqdm
 
 # Base URL of the Flask web server
 BASE_URL = "http://127.0.0.1:5000"
@@ -46,8 +47,8 @@ zipf_distribution = np.clip(zipf_distribution, 1, len(resource_list))  # Limit t
 # Dictionary to track requests
 request_log = {resource: 0 for resource in resource_list}
 
-# Generate requests based on skewed distribution
-for index in zipf_distribution:
+# Generate requests based on skewed distribution with progress bar
+for index in tqdm(zipf_distribution, desc="Processing Requests"):
     resource = resource_list[index - 1]
     try:
         response = requests.get(BASE_URL + resource)  # Simulate request

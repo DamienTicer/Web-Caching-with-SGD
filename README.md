@@ -7,7 +7,7 @@ Run the server with this command:
 py server.py
 
 Run Simulated traffic:
-python simulate_requests.py
+py simulate_requests.py
 
 Load and preview data:
 py data_preprocessing.py

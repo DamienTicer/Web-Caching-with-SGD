@@ -6,18 +6,19 @@ import signal
 import os
 
 # Number of iterations
-NUM_ITERATIONS = 5
+NUM_ITERATIONS = 100
 
 # File paths
 METRICS_FILE = "cumulative_performance_metrics.csv"
 AVERAGE_FILE = "average_performance_metrics.csv"
+COMPREHENSIVE_FILE = "comprehensive_metrics.txt"
 LOG_FILE = "flask_server.log"
 
 # Function to run a Python script
 def run_script(script_name):
     result = subprocess.run(["python", script_name])
     if result.returncode != 0:
-        print(f"Error running {script_name}:\n{result.stderr}")
+        print(f"Error running {script_name}")
     else:
         print(f"Finished {script_name}")
 
@@ -33,6 +34,10 @@ def calculate_average():
     df = pd.read_csv(METRICS_FILE)
     avg_df = df.groupby("Method").mean().reset_index()
     avg_df.to_csv(AVERAGE_FILE, index=False)
+
+# ---- Clear comprehensive_metrics.txt ----
+with open(COMPREHENSIVE_FILE, "w") as f:
+    f.write("")
 
 # Start Flask server in background and redirect output to log file
 with open(LOG_FILE, "w") as log_file:

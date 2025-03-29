@@ -11,7 +11,7 @@ with open("cache_results.json", "r") as f:
 df = pd.read_csv("processed_request_data.csv")
 
 # Cache capacity (assuming this is consistent across methods, adjust if needed)
-CACHE_CAPACITY_KB = df['size'].sum() * 0.2  # Example: 20% of total dataset size
+CACHE_CAPACITY_KB = df['size'].sum() * 0.2
 
 # Compute cache hit rate
 def compute_cache_hit_rate(cache, df):
@@ -28,38 +28,23 @@ def compute_latency_reduction(cache, df):
 
 # Compute cache size usage
 metrics = {}
-breakdown_lines = []
-
 for method, cache in cache_results.items():
-    cache_df = df[df["resource"].isin(cache)]
-    cache_usage = cache_df["size"].sum()
-
     metrics[method] = {
         "Cache Hit Rate (%)": compute_cache_hit_rate(cache, df),
         "Latency Reduction (%)": compute_latency_reduction(cache, df),
-        "Cache Usage (KB)": cache_usage,
+        "Cache Usage (KB)": df[df["resource"].isin(cache)]["size"].sum(),
         "Max Cache Size (KB)": CACHE_CAPACITY_KB
     }
-
-    # Add detailed breakdown to log
-    breakdown_lines.append(f"Method: {method}")
-    breakdown_lines.append("Resources Cached (resource: size KB):")
-    for _, row in cache_df.iterrows():
-        breakdown_lines.append(f"  {row['resource']}: {row['size']} KB")
-    breakdown_lines.append(f"Total Cache Usage: {cache_usage:.2f} KB")
-    breakdown_lines.append("\n")
 
 # Convert metrics to DataFrame and save
 metrics_df = pd.DataFrame.from_dict(metrics, orient="index")
 metrics_df.to_csv("performance_metrics.csv")
 
-# Save comprehensive metrics table to a separate file
-with open("comprehensive_metrics.txt", "w") as file:
+# Append metrics to comprehensive file
+with open("comprehensive_metrics.txt", "a") as file:
+    file.write("\n--- Iteration ---\n")
     file.write(metrics_df.to_string())
-
-# Save cache usage breakdown
-with open("cache_usage_breakdown.txt", "w") as f:
-    f.write("\n".join(breakdown_lines))
+    file.write("\n")
 
 # Global dark theme style
 plt.style.use('dark_background')
@@ -73,7 +58,7 @@ plt.ylabel("Cache Hit Rate (%)")
 plt.title("Cache Hit Rate Comparison")
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.savefig("cache_hit_rate_comparison.png")
-plt.show()
+plt.close()
 
 # Latency Reduction Comparison
 plt.figure(figsize=(10, 6))
@@ -83,7 +68,7 @@ plt.ylabel("Latency Reduction (%)")
 plt.title("Latency Reduction Comparison")
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.savefig("latency_reduction_comparison.png")
-plt.show()
+plt.close()
 
 # Cache Usage Comparison
 plt.figure(figsize=(10, 6))
@@ -100,4 +85,4 @@ plt.title("Cache Usage Comparison")
 plt.legend()
 plt.grid(True, linestyle='--', alpha=0.5)
 plt.savefig("cache_usage_comparison.png")
-plt.show()
+plt.close()

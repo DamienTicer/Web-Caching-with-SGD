@@ -2,16 +2,23 @@ import json
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+
+# Create folders
+os.makedirs("result_data", exist_ok=True)
+os.makedirs("result_visuals", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
+os.makedirs("interim_data", exist_ok=True)
 
 # Load caching results from JSON file
-with open("cache_results.json", "r") as f:
+with open("interim_data/cache_results.json", "r") as f:
     cache_results = json.load(f)
 
 # Load processed request dataset
-df = pd.read_csv("processed_request_data.csv")
+df = pd.read_csv("interim_data/processed_request_data.csv")
 
 # Cache capacity (assuming this is consistent across methods, adjust if needed)
-CACHE_CAPACITY_KB = df['size'].sum() * 0.2
+CACHE_CAPACITY_KB = df['size'].sum() * 0.2  # Example: 20% of total dataset size
 
 # Compute cache hit rate
 def compute_cache_hit_rate(cache, df):
@@ -38,13 +45,13 @@ for method, cache in cache_results.items():
 
 # Convert metrics to DataFrame and save
 metrics_df = pd.DataFrame.from_dict(metrics, orient="index")
-metrics_df.to_csv("performance_metrics.csv")
+metrics_df.to_csv("result_data/performance_metrics.csv")
 
-# Append metrics to comprehensive file
-with open("comprehensive_metrics.txt", "a") as file:
-    file.write("\n--- Iteration ---\n")
+# Save comprehensive metrics table to a separate file
+with open("logs/comprehensive_metrics.txt", "a") as file:
+    file.write("--- Iteration ---\n")
     file.write(metrics_df.to_string())
-    file.write("\n")
+    file.write("\n\n")
 
 # Global dark theme style
 plt.style.use('dark_background')
@@ -57,7 +64,7 @@ plt.xlabel("Caching Method")
 plt.ylabel("Cache Hit Rate (%)")
 plt.title("Cache Hit Rate Comparison")
 plt.grid(True, linestyle='--', alpha=0.5)
-plt.savefig("cache_hit_rate_comparison.png")
+plt.savefig("result_visuals/cache_hit_rate_comparison.png")
 plt.close()
 
 # Latency Reduction Comparison
@@ -67,7 +74,7 @@ plt.xlabel("Caching Method")
 plt.ylabel("Latency Reduction (%)")
 plt.title("Latency Reduction Comparison")
 plt.grid(True, linestyle='--', alpha=0.5)
-plt.savefig("latency_reduction_comparison.png")
+plt.savefig("result_visuals/latency_reduction_comparison.png")
 plt.close()
 
 # Cache Usage Comparison
@@ -84,5 +91,7 @@ plt.ylabel("Cache Usage (KB)")
 plt.title("Cache Usage Comparison")
 plt.legend()
 plt.grid(True, linestyle='--', alpha=0.5)
-plt.savefig("cache_usage_comparison.png")
+plt.savefig("result_visuals/cache_usage_comparison.png")
 plt.close()
+
+print("Performance metrics and graphs saved.")

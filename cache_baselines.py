@@ -2,16 +2,23 @@ import pandas as pd
 import heapq
 from collections import deque
 import json
+import os
+
+# Create folders
+os.makedirs("result_data", exist_ok=True)
+os.makedirs("result_visuals", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
+os.makedirs("interim_data", exist_ok=True)
 
 # Open output file for writing logs
-output_file = open("cache_baselines_output.txt", "w")
+output_file = open("logs/cache_baselines_output.txt", "w")
 
 # Helper function to write logs to file
 def log(msg):
     output_file.write(msg + "\n")
 
 # Load dataset
-df = pd.read_csv("processed_request_data.csv")
+df = pd.read_csv("interim_data/processed_request_data.csv")
 
 TOTAL_DATASET_SIZE = df["size"].sum()
 CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)
@@ -85,7 +92,7 @@ lfu_cache = lfu_caching(df)
 knapsack_cache = knapsack_caching(df)
 
 # Load the SGD-optimized cache selection for comparison
-sgd_df = pd.read_csv("optimized_cache_selection.csv")
+sgd_df = pd.read_csv("interim_data/optimized_cache_selection.csv")
 sgd_cache = list(sgd_df[sgd_df["cached"] == 1]["resource"])
 
 # Save results for later analysis
@@ -96,7 +103,7 @@ results = {
     "SGD-Based": sgd_cache
 }
 
-with open("cache_results.json", "w") as f:
+with open("interim_data/cache_results.json", "w") as f:
     json.dump(results, f)
 
 log("Cache comparison results saved.")

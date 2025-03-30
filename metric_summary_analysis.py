@@ -10,7 +10,7 @@ os.makedirs("logs", exist_ok=True)
 os.makedirs("interim_data", exist_ok=True)
 
 # File paths
-COMPREHENSIVE_FILE = "comprehensive_metrics.txt"
+COMPREHENSIVE_FILE = "logs/comprehensive_metrics.txt"
 CUMULATIVE_FILE = "result_data/cumulative_performance_metrics.csv"
 AVERAGE_FILE = "result_data/average_performance_metrics.csv"
 
@@ -85,7 +85,6 @@ for method in average_df["Method"]:
                      full_df[full_df["Method"] == method]["Max Cache Size (KB)"]) * 100
     plt.plot(full_df[full_df["Method"] == method]["Iteration"],
              usage_percent, label=method)
-#plt.axhline(y=100, color='yellow', linestyle='--', label="Max Capacity")
 plt.title("Cache Usage Percentage Over Iterations")
 plt.xlabel("Iteration")
 plt.ylabel("Cache Usage (%)")

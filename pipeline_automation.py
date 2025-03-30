@@ -8,11 +8,17 @@ import os
 # Number of iterations
 NUM_ITERATIONS = 100
 
+# Directories
+os.makedirs("result_data", exist_ok=True)
+os.makedirs("result_visuals", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
+os.makedirs("interim_data", exist_ok=True)
+
 # File paths
-METRICS_FILE = "cumulative_performance_metrics.csv"
-AVERAGE_FILE = "average_performance_metrics.csv"
-COMPREHENSIVE_FILE = "comprehensive_metrics.txt"
-LOG_FILE = "flask_server.log"
+METRICS_FILE = "result_data/cumulative_performance_metrics.csv"
+AVERAGE_FILE = "result_data/average_performance_metrics.csv"
+COMPREHENSIVE_FILE = "logs/comprehensive_metrics.txt"
+LOG_FILE = "logs/flask_server.log"
 
 # Function to run a Python script
 def run_script(script_name):
@@ -24,7 +30,7 @@ def run_script(script_name):
 
 # Function to append metrics
 def append_metrics(iteration):
-    metrics_df = pd.read_csv("performance_metrics.csv")
+    metrics_df = pd.read_csv("result_data/performance_metrics.csv")
     metrics_df.insert(0, "Iteration", iteration)
     with open(METRICS_FILE, "a") as f:
         metrics_df.to_csv(f, header=f.tell() == 0, index=False)

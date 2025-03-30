@@ -1,9 +1,16 @@
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
+import os
+
+# Create necessary folders
+os.makedirs("result_data", exist_ok=True)
+os.makedirs("result_visuals", exist_ok=True)
+os.makedirs("logs", exist_ok=True)
+os.makedirs("interim_data", exist_ok=True)
 
 # Load dataset
-df = pd.read_csv("processed_request_data.csv")
+df = pd.read_csv("interim_data/processed_request_data.csv")
 
 TOTAL_DATASET_SIZE = df["size"].sum()  # Sum of all file sizes
 CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)  # Set cache to 20% of total size
@@ -124,5 +131,5 @@ df = adaptive_retry_optimizer(df)
 df = cleanup_cache(df)
 
 # Save optimized caching strategy
-df.to_csv("optimized_cache_selection.csv", index=False)
-print("Optimized cache selection saved to optimized_cache_selection.csv")
+df.to_csv("interim_data/optimized_cache_selection.csv", index=False)
+print("Optimized cache selection saved to interim_data/optimized_cache_selection.csv")

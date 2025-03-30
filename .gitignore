@@ -52,3 +52,8 @@ instance/
 
 # Docker & Deployment (if used)
 docker-compose.yml
+
+#folders
+interim_data/
+result_data/
+result_visuals/

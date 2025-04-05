@@ -6,7 +6,7 @@ import signal
 import os
 
 # Number of iterations
-NUM_ITERATIONS = 100
+NUM_ITERATIONS = 50
 
 # Directories
 os.makedirs("result_data", exist_ok=True)

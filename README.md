@@ -4,7 +4,9 @@
 
 This project evaluates and compares the effectiveness of a **Knapsack-Based Stochastic Gradient Descent (SGD) Approach** to traditional web caching methods such as **LRU (Least Recently Used)**, **LFU (Least Frequently Used)**, and **Greedy Knapsack** strategies.
 
-The pipeline simulates web requests, applies different caching algorithms, records cache hit rates, latency reduction, and cache usage, then summarizes and visualizes the results.
+The pipeline simulates web requests from **multiple clients** concurrently, applies different caching algorithms, and records cache hit rates, latency reduction, and cache usage over multiple iterations. Results are then summarized and visualized for comparison.
+
+> **Design Note:** The simulation environment leverages a **multi-client Zipfian request generator** to more accurately reflect real-world traffic distribution. Each iteration simulates multiple concurrent client paths using asynchronous requests to a central Flask-based server that acts as the cache host.
 
 ---
 
@@ -33,7 +35,7 @@ The pipeline simulates web requests, applies different caching algorithms, recor
 │   └── cache_hit_rate_iterations.png
 │
 ├── server.py               # Flask server to simulate content requests
-├── simulate_requests.py    # Generates random web requests and logs them
+├── simulate_requests.py    # Simulates concurrent multi-client requests
 ├── data_preprocessing.py   # Processes request data (assigns size/latency)
 ├── sgd_cache_optimizer.py  # Applies SGD-based caching strategy
 ├── cache_baselines.py      # Runs baseline caching strategies
@@ -80,7 +82,7 @@ If you want to run each script manually, execute them in this order:
 
 ```bash
 py server.py               # Run Flask server in separate terminal
-py simulate_requests.py    # Simulate request data
+py simulate_requests.py    # Simulate multi-client request data
 py data_preprocessing.py   # Assign size and latency to requests
 py sgd_cache_optimizer.py  # Optimize cache using SGD
 py cache_baselines.py      # Apply baseline caching methods
@@ -93,4 +95,6 @@ py metric_summary_analysis.py # Summarize all iterations
 ## 📌 Notes
 - `pipeline_automation.py` will automatically clean `logs/comprehensive_metrics.txt` at the start.
 - All logs, data files, and result images will be organized into their respective folders.
+- Each iteration simulates multiple clients asynchronously with unique request paths.
+- Comparison plots were removed; only iteration-based performance graphs are generated.
 - Each iteration result is appended to cumulative metrics and averaged at the end.

@@ -6,6 +6,8 @@ import numpy as np
 import json
 from tqdm import tqdm
 import os
+import threading
+from queue import Queue
 
 # Create required folders
 os.makedirs("interim_data", exist_ok=True)
@@ -42,35 +44,58 @@ with open("interim_data/web_resources.json", "w") as f:
 print("Web resources saved to interim_data/web_resources.json")
 
 # Simulating request frequencies using a Zipfian (long-tail) distribution
-num_requests = 100  # Total simulated requests
+num_requests_per_client = 25
+num_clients = 10
 resource_list = list(web_resources.keys())
+total_requests = num_requests_per_client * num_clients
 
-# Generate skewed request frequencies
-zipf_distribution = np.random.zipf(1.5, num_requests)
-zipf_distribution = np.clip(zipf_distribution, 1, len(resource_list))  # Limit to valid indexes
+zipf_distributions = [
+    np.clip(np.random.zipf(1.5, num_requests_per_client), 1, len(resource_list))
+    for _ in range(num_clients)
+]
 
-# Dictionary to track requests
+# Initialize request log and log file
 request_log = {resource: 0 for resource in resource_list}
-
-# Open log file
 log_file = open("logs/simulate_requests_log.txt", "w")
+progress_bar = tqdm(total=total_requests, desc="Simulating Client Requests")
 
-# Generate requests based on skewed distribution with progress bar
-for index in tqdm(zipf_distribution, desc="Processing Requests"):
-    resource = resource_list[index - 1]
-    try:
-        response = requests.get(BASE_URL + resource)  # Simulate request
-        if response.status_code == 200:
-            request_log[resource] += 1
-        log_file.write(f"Request: {resource}, Status: {response.status_code}\n")
-    except requests.exceptions.RequestException as e:
-        log_file.write(f"Error fetching {resource}: {e}\n")
+# Thread-safe queue for logging
+log_queue = Queue()
 
-    time.sleep(random.uniform(0.1, 0.5))  # Random delay
+# Define thread function
+def client_thread(client_id, zipf_distribution):
+    for index in zipf_distribution:
+        resource = resource_list[index - 1]
+        try:
+            response = requests.get(BASE_URL + resource, headers={"X-Client-ID": str(client_id)})
+            if response.status_code == 200:
+                request_log[resource] += 1
+            log_queue.put(f"Client {client_id} Request: {resource}, Status: {response.status_code}\n")
+        except requests.exceptions.RequestException as e:
+            log_queue.put(f"Client {client_id} Error fetching {resource}: {e}\n")
 
-# Save request log to CSV
-df = pd.DataFrame(list(request_log.items()), columns=["resource", "frequency"])
-df.to_csv("interim_data/request_data.csv", index=False)
-print("Request data saved to interim_data/request_data.csv")
+        progress_bar.update(1)
+        time.sleep(random.uniform(0.05, 0.2))
+
+# Launch threads
+threads = []
+for client_id, zipf_distribution in enumerate(zipf_distributions, start=1):
+    t = threading.Thread(target=client_thread, args=(client_id, zipf_distribution))
+    t.start()
+    threads.append(t)
+
+# Wait for all threads to finish
+for t in threads:
+    t.join()
+
+# Flush remaining logs
+while not log_queue.empty():
+    log_file.write(log_queue.get())
 
 log_file.close()
+progress_bar.close()
+
+# Save request log to CSV
+request_df = pd.DataFrame(list(request_log.items()), columns=["resource", "frequency"])
+request_df.to_csv("interim_data/request_data.csv", index=False)
+print("Request data saved to interim_data/request_data.csv")

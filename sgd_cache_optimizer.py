@@ -13,7 +13,7 @@ os.makedirs("interim_data", exist_ok=True)
 df = pd.read_csv("interim_data/processed_request_data.csv")
 
 TOTAL_DATASET_SIZE = df["size"].sum()  # Sum of all file sizes
-CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)  # Set cache to 20% of total size
+CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.1)  # Set cache to 10% of total size
 
 print(f"Total dataset size: {TOTAL_DATASET_SIZE} KB")
 print(f"New cache capacity: {CACHE_CAPACITY} KB")

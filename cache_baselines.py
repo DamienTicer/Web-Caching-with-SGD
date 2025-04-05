@@ -21,7 +21,7 @@ def log(msg):
 df = pd.read_csv("interim_data/processed_request_data.csv")
 
 TOTAL_DATASET_SIZE = df["size"].sum()
-CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.2)
+CACHE_CAPACITY = int(TOTAL_DATASET_SIZE * 0.1)
 
 log(f"Total dataset size: {TOTAL_DATASET_SIZE} KB")
 log(f"New cache capacity: {CACHE_CAPACITY} KB")

@@ -1,0 +1,402 @@
+{
+    "/small_images_1.dat": {
+        "size": 24,
+        "latency": 1.176583702648462
+    },
+    "/small_images_2.dat": {
+        "size": 26,
+        "latency": 1.4578090378872426
+    },
+    "/small_images_3.dat": {
+        "size": 29,
+        "latency": 0.20539905995129
+    },
+    "/small_images_4.dat": {
+        "size": 33,
+        "latency": 0.6527600268596393
+    },
+    "/small_images_5.dat": {
+        "size": 27,
+        "latency": 1.387655721356056
+    },
+    "/small_images_6.dat": {
+        "size": 19,
+        "latency": 0.8646892599813613
+    },
+    "/small_images_7.dat": {
+        "size": 34,
+        "latency": 1.4266113615042018
+    },
+    "/small_images_8.dat": {
+        "size": 45,
+        "latency": 1.0878280408411405
+    },
+    "/small_images_9.dat": {
+        "size": 34,
+        "latency": 0.7584784074284942
+    },
+    "/small_images_10.dat": {
+        "size": 28,
+        "latency": 0.2686729465581141
+    },
+    "/small_images_11.dat": {
+        "size": 12,
+        "latency": 0.4469303653694601
+    },
+    "/small_images_12.dat": {
+        "size": 33,
+        "latency": 0.8582449616995338
+    },
+    "/small_images_13.dat": {
+        "size": 50,
+        "latency": 0.6174383478336102
+    },
+    "/small_images_14.dat": {
+        "size": 47,
+        "latency": 0.26787651953244274
+    },
+    "/small_images_15.dat": {
+        "size": 26,
+        "latency": 0.586966113820717
+    },
+    "/small_images_16.dat": {
+        "size": 44,
+        "latency": 0.29718666233445934
+    },
+    "/small_images_17.dat": {
+        "size": 31,
+        "latency": 1.0368406952826672
+    },
+    "/small_images_18.dat": {
+        "size": 47,
+        "latency": 0.40464050475509383
+    },
+    "/small_images_19.dat": {
+        "size": 15,
+        "latency": 1.0453942262770184
+    },
+    "/small_images_20.dat": {
+        "size": 33,
+        "latency": 0.4689108952343701
+    },
+    "/small_images_21.dat": {
+        "size": 18,
+        "latency": 1.3304598780553576
+    },
+    "/small_images_22.dat": {
+        "size": 35,
+        "latency": 1.4515098179340267
+    },
+    "/small_images_23.dat": {
+        "size": 47,
+        "latency": 0.10901780230091938
+    },
+    "/small_images_24.dat": {
+        "size": 18,
+        "latency": 0.2726193745288148
+    },
+    "/small_images_25.dat": {
+        "size": 49,
+        "latency": 1.4711625775227621
+    },
+    "/small_images_26.dat": {
+        "size": 20,
+        "latency": 0.30637141071168505
+    },
+    "/small_images_27.dat": {
+        "size": 46,
+        "latency": 0.4015365372132304
+    },
+    "/small_images_28.dat": {
+        "size": 11,
+        "latency": 0.05914794348689422
+    },
+    "/small_images_29.dat": {
+        "size": 16,
+        "latency": 0.577911144815657
+    },
+    "/small_images_30.dat": {
+        "size": 34,
+        "latency": 0.6467772361577274
+    },
+    "/large_images_31.dat": {
+        "size": 213,
+        "latency": 0.3230144942951553
+    },
+    "/large_images_32.dat": {
+        "size": 119,
+        "latency": 1.0294762881591213
+    },
+    "/large_images_33.dat": {
+        "size": 412,
+        "latency": 0.35814694462064267
+    },
+    "/large_images_34.dat": {
+        "size": 438,
+        "latency": 0.8840935744058614
+    },
+    "/large_images_35.dat": {
+        "size": 203,
+        "latency": 0.2601857423986286
+    },
+    "/large_images_36.dat": {
+        "size": 488,
+        "latency": 0.09551061348524723
+    },
+    "/large_images_37.dat": {
+        "size": 408,
+        "latency": 0.80539554205995
+    },
+    "/large_images_38.dat": {
+        "size": 150,
+        "latency": 1.210925246783887
+    },
+    "/large_images_39.dat": {
+        "size": 211,
+        "latency": 1.1344328746131158
+    },
+    "/large_images_40.dat": {
+        "size": 110,
+        "latency": 0.3853230436165197
+    },
+    "/large_images_41.dat": {
+        "size": 366,
+        "latency": 0.6391159640918875
+    },
+    "/large_images_42.dat": {
+        "size": 176,
+        "latency": 1.2832631740616396
+    },
+    "/large_images_43.dat": {
+        "size": 202,
+        "latency": 1.3908471421299473
+    },
+    "/large_images_44.dat": {
+        "size": 252,
+        "latency": 0.6869631962583479
+    },
+    "/large_images_45.dat": {
+        "size": 353,
+        "latency": 0.6003757040533585
+    },
+    "/large_images_46.dat": {
+        "size": 257,
+        "latency": 0.4099802465414858
+    },
+    "/large_images_47.dat": {
+        "size": 480,
+        "latency": 0.32334956659778313
+    },
+    "/large_images_48.dat": {
+        "size": 316,
+        "latency": 1.0688628233248259
+    },
+    "/large_images_49.dat": {
+        "size": 293,
+        "latency": 0.8607910968998099
+    },
+    "/large_images_50.dat": {
+        "size": 139,
+        "latency": 1.1321247227367113
+    },
+    "/videos_51.dat": {
+        "size": 49481,
+        "latency": 0.4825833335239414
+    },
+    "/videos_52.dat": {
+        "size": 34364,
+        "latency": 0.8396134381998202
+    },
+    "/videos_53.dat": {
+        "size": 41807,
+        "latency": 0.2093860509668986
+    },
+    "/videos_54.dat": {
+        "size": 48572,
+        "latency": 1.2698058807977604
+    },
+    "/videos_55.dat": {
+        "size": 12359,
+        "latency": 0.41959905341654896
+    },
+    "/videos_56.dat": {
+        "size": 27891,
+        "latency": 1.468252946285252
+    },
+    "/videos_57.dat": {
+        "size": 39435,
+        "latency": 0.40266292885076604
+    },
+    "/videos_58.dat": {
+        "size": 47920,
+        "latency": 1.4679969839440576
+    },
+    "/videos_59.dat": {
+        "size": 22791,
+        "latency": 0.46137392469699906
+    },
+    "/videos_60.dat": {
+        "size": 25686,
+        "latency": 0.32518664347426407
+    },
+    "/scripts_61.dat": {
+        "size": 15,
+        "latency": 1.2414917692705758
+    },
+    "/scripts_62.dat": {
+        "size": 13,
+        "latency": 0.6004996240631792
+    },
+    "/scripts_63.dat": {
+        "size": 7,
+        "latency": 0.9326681247941722
+    },
+    "/scripts_64.dat": {
+        "size": 17,
+        "latency": 0.7794928020303531
+    },
+    "/scripts_65.dat": {
+        "size": 30,
+        "latency": 1.3707881797697712
+    },
+    "/scripts_66.dat": {
+        "size": 16,
+        "latency": 0.2926530824404689
+    },
+    "/scripts_67.dat": {
+        "size": 5,
+        "latency": 0.18328511999669528
+    },
+    "/scripts_68.dat": {
+        "size": 12,
+        "latency": 0.6120271462601776
+    },
+    "/scripts_69.dat": {
+        "size": 25,
+        "latency": 1.4006893846736623
+    },
+    "/scripts_70.dat": {
+        "size": 23,
+        "latency": 0.2607896662550693
+    },
+    "/scripts_71.dat": {
+        "size": 20,
+        "latency": 1.2174773487894137
+    },
+    "/scripts_72.dat": {
+        "size": 10,
+        "latency": 0.43932109168576755
+    },
+    "/scripts_73.dat": {
+        "size": 10,
+        "latency": 0.7059947319902392
+    },
+    "/scripts_74.dat": {
+        "size": 25,
+        "latency": 0.21943388867674735
+    },
+    "/scripts_75.dat": {
+        "size": 23,
+        "latency": 1.4415283713797329
+    },
+    "/scripts_76.dat": {
+        "size": 15,
+        "latency": 1.2510035432460036
+    },
+    "/scripts_77.dat": {
+        "size": 25,
+        "latency": 1.2629630386586095
+    },
+    "/scripts_78.dat": {
+        "size": 19,
+        "latency": 0.7006610077012911
+    },
+    "/scripts_79.dat": {
+        "size": 25,
+        "latency": 0.9863795747292734
+    },
+    "/scripts_80.dat": {
+        "size": 19,
+        "latency": 0.6064919855023342
+    },
+    "/css_81.dat": {
+        "size": 10,
+        "latency": 1.2747412180912063
+    },
+    "/css_82.dat": {
+        "size": 13,
+        "latency": 1.4134743504105645
+    },
+    "/css_83.dat": {
+        "size": 28,
+        "latency": 1.2911503198037895
+    },
+    "/css_84.dat": {
+        "size": 16,
+        "latency": 1.337035398206364
+    },
+    "/css_85.dat": {
+        "size": 8,
+        "latency": 0.6919170137976264
+    },
+    "/css_86.dat": {
+        "size": 12,
+        "latency": 0.49132349485161225
+    },
+    "/css_87.dat": {
+        "size": 22,
+        "latency": 0.2984060908476641
+    },
+    "/css_88.dat": {
+        "size": 17,
+        "latency": 1.0406829249242422
+    },
+    "/css_89.dat": {
+        "size": 18,
+        "latency": 1.3149143882822085
+    },
+    "/css_90.dat": {
+        "size": 24,
+        "latency": 1.3201423868521798
+    },
+    "/css_91.dat": {
+        "size": 18,
+        "latency": 0.8341056171931421
+    },
+    "/css_92.dat": {
+        "size": 11,
+        "latency": 1.4200569217994554
+    },
+    "/css_93.dat": {
+        "size": 6,
+        "latency": 1.2104557772003628
+    },
+    "/css_94.dat": {
+        "size": 10,
+        "latency": 0.12440967694286198
+    },
+    "/css_95.dat": {
+        "size": 25,
+        "latency": 0.8165480027488761
+    },
+    "/css_96.dat": {
+        "size": 30,
+        "latency": 0.2592030149089478
+    },
+    "/css_97.dat": {
+        "size": 7,
+        "latency": 0.3630268952008399
+    },
+    "/css_98.dat": {
+        "size": 23,
+        "latency": 1.4658162739544742
+    },
+    "/css_99.dat": {
+        "size": 9,
+        "latency": 1.167363017773842
+    },
+    "/css_100.dat": {
+        "size": 6,
+        "latency": 0.20274403954476716
+    }
+}

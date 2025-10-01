@@ -1,59 +1,36 @@
-# Python Bytecode
+# Python bytecode
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 
-# Virtual Environment
+# Virtual environment
 venv/
 .env/
 *.venv
-Pipfile
-Pipfile.lock
 
-# Jupyter Notebooks Checkpoints (if used)
+# Jupyter checkpoints
 .ipynb_checkpoints/
 
-# System Files (Mac, Windows, Linux)
+# System files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Logs & Debugging
-*.log
-logs/
-debug.log
-
-# IDE & Editor Files
+# IDE files
 .vscode/
 .idea/
-*.sublime-workspace
 
-# Temporary Files
-*.tmp
-*.bak
+# Logs
+*.log
+/logs/
+debug.log
 
-# Data Files (Generated Experiment Data)
-*.csv
-*.json
-*.sqlite
-*.png
-*.txt
-data/
-request_data.csv
+# Runtime experiment output (ignored at root only)
+ /interim_data/
+ /result_data/
+ /result_visuals/
+ /logs/
 
-# Compiled C Extensions (if any)
-*.so
-
-# Flask Cache & Sessions
-instance/
-*.db
-*.sqlite3
-
-# Docker & Deployment (if used)
-docker-compose.yml
-
-#folders
-interim_data/
-result_data/
-result_visuals/
+# Keep examples inside Sample_output
+!Sample_output/**

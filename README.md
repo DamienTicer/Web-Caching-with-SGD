@@ -1,100 +1,123 @@
 # Comparing Knapsack-Based Stochastic Gradient Descent Approach To Typical Web Caching Methods
 
-## 📄 Project Summary
+## Overview
 
-This project evaluates and compares the effectiveness of a **Knapsack-Based Stochastic Gradient Descent (SGD) Approach** to traditional web caching methods such as **LRU (Least Recently Used)**, **LFU (Least Frequently Used)**, and **Greedy Knapsack** strategies.
+This project was developed as part of my senior research at **Bowie State University**.
+It evaluates and compares the effectiveness of a **Knapsack-Based Stochastic Gradient Descent (SGD) approach** to traditional web caching methods such as **LRU (Least Recently Used)**, **LFU (Least Frequently Used)**, and **Greedy Knapsack** strategies.
 
-The pipeline simulates web requests from **multiple clients** concurrently, applies different caching algorithms, and records cache hit rates, latency reduction, and cache usage over multiple iterations. Results are then summarized and visualized for comparison.
-
-> **Design Note:** The simulation environment leverages a **multi-client Zipfian request generator** to more accurately reflect real-world traffic distribution. Each iteration simulates multiple concurrent client paths using asynchronous requests to a central Flask-based server that acts as the cache host.
+The system simulates **multi-client request patterns** against a central Flask-based cache server, applies different caching algorithms, and records performance metrics across multiple iterations. Results are then summarized and visualized for direct comparison.
 
 ---
 
-## 📂 Project Structure Overview
+## Design Highlights
+
+* **Multi-client simulation** with Zipfian request distribution to reflect real-world traffic.
+* **Flask server backend** simulating cacheable content with configurable latency/size.
+* **SGD-based optimization** compared to baseline algorithms (LRU, LFU, Greedy).
+* **Automated pipeline** that handles data preprocessing, caching, simulation, logging, and results aggregation.
+* **Visual outputs** of cache hit rates, latency reduction, and cache usage.
+
+---
+
+## Project Structure
 
 ```
-├── interim_data/           # Temporary and intermediate data files
-│   ├── request_data.csv
-│   ├── processed_request_data.csv
-│   ├── optimized_cache_selection.csv
-│   ├── cache_results.json
-│   └── web_resources.json
+├── src/                    # Source code (organized by modules)
+│   ├── analysis/           # Metrics & visualization
+│   ├── data/               # Preprocessing
+│   ├── models/             # Caching strategies
+│   ├── pipeline/           # Full automation & request simulation
+│   └── server/             # Flask server
 │
-├── logs/                   # Logs and detailed iteration outputs
-│   ├── flask_server.log
-│   ├── cache_baselines_output.txt
-│   └── comprehensive_metrics.txt
+├── Sample_output/           # Representative example results
+│   ├── interim_data/
+│   ├── logs/
+│   ├── result_data/
+│   └── result_visuals/
 │
-├── result_data/            # Processed data summaries
-│   ├── cumulative_performance_metrics.csv
-│   └── average_performance_metrics.csv
-│
-├── result_visuals/         # Visual outputs of analysis
-│   ├── cache_usage_percentage_iterations.png
-│   ├── latency_reduction_iterations.png
-│   └── cache_hit_rate_iterations.png
-│
-├── server.py               # Flask server to simulate content requests
-├── simulate_requests.py    # Simulates concurrent multi-client requests
-├── data_preprocessing.py   # Processes request data (assigns size/latency)
-├── sgd_cache_optimizer.py  # Applies SGD-based caching strategy
-├── cache_baselines.py      # Runs baseline caching strategies
-├── analyze_results.py      # Analyzes single iteration results
-├── metric_summary_analysis.py # Aggregates and visualizes metrics over all iterations
-└── pipeline_automation.py  # Full pipeline to automate the entire process
+├── requirements.txt         # Python dependencies
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## ⚙️ Dependencies Installation
+## Example Output
+
+Because results vary (stochastic inputs and random seeds), this repository includes a **`Sample_output/`** directory with representative runs:
+
+* **`Sample_output/result_data/`** → CSV summaries of cache hit rates and latency reduction
+* **`Sample_output/result_visuals/`** → plots of cache usage, hit rate, and latency reduction
+* **`Sample_output/logs/`** → example runtime logs from the Flask server and pipeline
+
+### Example Visualization
+
+Cache hit rate across iterations:
+
+![Cache Hit Rate](Sample_output/result_visuals/cache_hit_rate_iterations.png)
+
+---
+
+## Installation
 
 Ensure you have **Python 3.9+** installed.
 
-Install required packages:
-
-```
-py -m pip install flask numpy pandas matplotlib scikit-learn redis tqdm requests
+```bash
+git clone https://github.com/DamienTicer/Web-Caching-with-SGD.git
+cd Web-Caching-with-SGD
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ Running the Full Pipeline
+## Running the Full Pipeline
 
-To run the entire automated process:
-
-```bash
-py pipeline_automation.py
-```
-
-Once the pipeline completes, execute the summary analysis:
+Run the end-to-end automation:
 
 ```bash
-py metric_summary_analysis.py
+python -m src.pipeline.pipeline_automation
 ```
 
-This will generate cumulative metrics, average metrics, and visualizations under `result_data/` and `result_visuals/`.
+After completion, run the metrics summary:
+
+```bash
+python -m src.analysis.metric_summary_analysis
+```
+
+Results will appear under `result_data/` and `result_visuals/`.
 
 ---
 
-## 🔄 Running Individual Components (Optional)
+## Running Individual Components (Optional)
 
-If you want to run each script manually, execute them in this order:
+If you prefer step-by-step execution:
 
 ```bash
-py server.py               # Run Flask server in separate terminal
-py simulate_requests.py    # Simulate multi-client request data
-py data_preprocessing.py   # Assign size and latency to requests
-py sgd_cache_optimizer.py  # Optimize cache using SGD
-py cache_baselines.py      # Apply baseline caching methods
-py analyze_results.py      # Analyze current iteration
-py metric_summary_analysis.py # Summarize all iterations
+python -m src.server.server             # Start Flask server
+python -m src.pipeline.simulate_requests
+python -m src.data.data_preprocessing
+python -m src.models.sgd_cache_optimizer
+python -m src.models.cache_baselines
+python -m src.analysis.analyze_results
+python -m src.analysis.metric_summary_analysis
 ```
 
 ---
 
-## 📌 Notes
-- `pipeline_automation.py` will automatically clean `logs/comprehensive_metrics.txt` at the start.
-- All logs, data files, and result images will be organized into their respective folders.
-- Each iteration simulates multiple clients asynchronously with unique request paths.
-- Comparison plots were removed; only iteration-based performance graphs are generated.
-- Each iteration result is appended to cumulative metrics and averaged at the end.
+## Notes
+
+* The pipeline automatically cleans and regenerates logs at each run.
+* Each iteration simulates multiple clients asynchronously.
+* Results vary across runs, but trends remain consistent.
+* Example outputs are included in `Sample_output/` for reference.
+
+---
+
+## Author
+
+**Damien Ticer**
+
+* Computer Science Graduate, Bowie State University
+* [GitHub Portfolio](https://github.com/DamienTicer)

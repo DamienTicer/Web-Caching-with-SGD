@@ -1,0 +1,350 @@
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               6.543624           27320.0              28315.8
+LFU                            99.6               4.395973           28150.0              28315.8
+Greedy Knapsack                99.6               4.395973           28150.0              28315.8
+SGD-Based                      99.2               6.543624           27320.0              28315.8
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               3.354779           23485.0              25036.0
+LFU                            99.6               3.354779           23485.0              25036.0
+Greedy Knapsack                99.6               3.354779           23485.0              25036.0
+SGD-Based                      99.6               3.354779           23485.0              25036.0
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2                5.91427           12917.0              14708.8
+LFU                           100.0                0.00000           14706.0              14708.8
+Greedy Knapsack               100.0                0.00000           14706.0              14708.8
+SGD-Based                      99.2                5.91427           12917.0              14708.8
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               4.939294           14298.0              22823.5
+LFU                            99.6               4.939294           14298.0              22823.5
+Greedy Knapsack                99.6               4.939294           14298.0              22823.5
+SGD-Based                      99.6               4.939294           14298.0              22823.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2                3.62945           28617.0              30830.9
+LFU                            99.2                3.62945           28617.0              30830.9
+Greedy Knapsack                99.2                3.62945           28617.0              30830.9
+SGD-Based                      99.2                3.62945           28617.0              30830.9
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8               9.025097           22939.0              25281.5
+LFU                            98.8               7.046332           25279.0              25281.5
+Greedy Knapsack                99.2               6.177606           21272.0              25281.5
+SGD-Based                      98.8               9.025097           22939.0              25281.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               4.423077           23265.0              24810.4
+LFU                            99.6               2.764423           23288.0              24810.4
+Greedy Knapsack                99.6               2.764423           23288.0              24810.4
+SGD-Based                      99.2               4.423077           23265.0              24810.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               3.737226           21708.0              28418.6
+LFU                            99.6               3.737226           21708.0              28418.6
+Greedy Knapsack                99.6               3.737226           21708.0              28418.6
+SGD-Based                      99.6               3.737226           21708.0              28418.6
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8                9.68676           16143.0              23163.0
+LFU                            99.2                6.68597           19971.0              23163.0
+Greedy Knapsack                99.2                6.68597           19971.0              23163.0
+SGD-Based                      98.8                9.68676           16143.0              23163.0
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               6.963788           30583.0              31022.4
+LFU                            99.6               6.963788           30583.0              31022.4
+Greedy Knapsack                99.6               6.963788           30583.0              31022.4
+SGD-Based                      99.6               6.963788           30583.0              31022.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            91.2              13.659872           18314.0              18314.8
+LFU                            99.2               7.240645           18314.0              18314.8
+Greedy Knapsack                99.2               7.240645           18314.0              18314.8
+SGD-Based                      91.2              13.659872           18314.0              18314.8
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               7.138554           14659.0              21180.3
+LFU                            99.2               7.138554           14659.0              21180.3
+Greedy Knapsack                99.2               7.138554           14659.0              21180.3
+SGD-Based                      99.2               7.138554           14659.0              21180.3
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.0              17.628408           14135.0              17404.0
+LFU                            98.4              14.457831           17404.0              17404.0
+Greedy Knapsack                98.4              15.916297           14720.0              17404.0
+SGD-Based                      98.0              17.628408           14135.0              17404.0
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               5.856833           17862.0              24753.1
+LFU                            99.6               5.856833           17862.0              24753.1
+Greedy Knapsack                99.6               5.856833           17862.0              24753.1
+SGD-Based                      99.6               5.856833           17862.0              24753.1
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            97.2              15.759449           18056.0              24228.0
+LFU                            97.6              13.311148           22406.0              24228.0
+Greedy Knapsack                97.6              13.311148           22406.0              24228.0
+SGD-Based                      97.2              15.759449           18056.0              24228.0
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8               5.702364           20914.0              21920.1
+LFU                            98.8               5.702364           20914.0              21920.1
+Greedy Knapsack                98.8               5.702364           20914.0              21920.1
+SGD-Based                      98.8               5.702364           20914.0              21920.1
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8              11.135968           14948.0              22559.9
+LFU                            99.2               9.395973           18497.0              22559.9
+Greedy Knapsack                99.2               9.395973           18497.0              22559.9
+SGD-Based                      98.8              11.135968           14948.0              22559.9
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               3.702457           19457.0              20180.5
+LFU                            99.6               3.702457           19457.0              20180.5
+Greedy Knapsack                99.6               3.702457           19457.0              20180.5
+SGD-Based                      99.6               3.702457           19457.0              20180.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               6.932990           28347.0              28701.2
+LFU                            99.6               4.407216           20486.0              28701.2
+Greedy Knapsack                99.6               4.407216           20486.0              28701.2
+SGD-Based                      99.2               6.932990           28347.0              28701.2
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               8.386924           19571.0              20854.4
+LFU                            99.2               8.386924           20851.0              20854.4
+Greedy Knapsack                99.2               8.386924           20851.0              20854.4
+SGD-Based                      99.2               8.386924           19571.0              20854.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.4              13.669881           19802.0              22129.1
+LFU                            98.8              10.635281           20026.0              22129.1
+Greedy Knapsack                98.8              10.635281           20026.0              22129.1
+SGD-Based                      98.4              13.669881           19802.0              22129.1
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               5.252641           17557.0              22251.6
+LFU                            99.6               5.252641           17557.0              22251.6
+Greedy Knapsack                99.6               5.252641           17557.0              22251.6
+SGD-Based                      99.6               5.252641           17557.0              22251.6
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               4.360780           22502.0              22715.2
+LFU                            99.6               1.516793           22713.0              22715.2
+Greedy Knapsack                99.6               4.360780           22502.0              22715.2
+SGD-Based                      99.6               4.360780           22502.0              22715.2
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8               6.422227           24941.0              27658.5
+LFU                            99.2               4.896379           27654.0              27658.5
+Greedy Knapsack                99.2               4.896379           27654.0              27658.5
+SGD-Based                      98.8               6.422227           24941.0              27658.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            90.8                9.91984           25658.0              25659.7
+LFU                            99.2                7.51503           25659.0              25659.7
+Greedy Knapsack                99.2                7.51503           25659.0              25659.7
+SGD-Based                      90.8                9.91984           25658.0              25659.7
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8               9.665252           27033.0              28325.6
+LFU                            98.8               9.665252           28324.0              28325.6
+Greedy Knapsack                98.8               9.665252           28324.0              28325.6
+SGD-Based                      98.8               9.665252           27033.0              28325.6
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                           100.0                    0.0           19302.0              19677.9
+LFU                           100.0                    0.0           15585.0              19677.9
+Greedy Knapsack               100.0                    0.0           15585.0              19677.9
+SGD-Based                     100.0                    0.0           19302.0              19677.9
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               7.648631           26392.0              30023.4
+LFU                           100.0               0.000000           26614.0              30023.4
+Greedy Knapsack               100.0               0.000000           26614.0              30023.4
+SGD-Based                      99.2               7.648631           26392.0              30023.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6                2.98465           27146.0              35917.8
+LFU                            99.6                2.98465           27146.0              35917.8
+Greedy Knapsack                99.6                2.98465           27146.0              35917.8
+SGD-Based                      99.6                2.98465           27146.0              35917.8
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8               9.654520           25617.0              26944.1
+LFU                            99.2               7.193564           15398.0              26944.1
+Greedy Knapsack                99.2               7.193564           15398.0              26944.1
+SGD-Based                      98.8               9.654520           25617.0              26944.1
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8              12.026066           34584.0              35482.3
+LFU                            98.8              12.026066           34584.0              35482.3
+Greedy Knapsack                98.8              12.026066           34584.0              35482.3
+SGD-Based                      98.8              12.026066           34584.0              35482.3
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                           100.0                    0.0           21962.0              25316.8
+LFU                           100.0                    0.0           21962.0              25316.8
+Greedy Knapsack               100.0                    0.0           21962.0              25316.8
+SGD-Based                     100.0                    0.0           21962.0              25316.8
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            92.8               8.482490           30685.0              30688.4
+LFU                            99.2               5.162127           29121.0              30688.4
+Greedy Knapsack                99.2               5.162127           29121.0              30688.4
+SGD-Based                      92.8               8.482490           30685.0              30688.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               6.155633           26547.0              28368.4
+LFU                            99.2               6.155633           26547.0              28368.4
+Greedy Knapsack                99.2               6.155633           26547.0              28368.4
+SGD-Based                      99.2               6.155633           26547.0              28368.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8              14.928058           13870.0              26161.4
+LFU                            98.0              10.041966           26160.0              26161.4
+Greedy Knapsack                98.8              14.928058           13870.0              26161.4
+SGD-Based                      98.8              14.928058           13870.0              26161.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            88.8               8.014462           23634.0              23636.3
+LFU                            99.6               1.777644           23634.0              23636.3
+Greedy Knapsack                99.6               5.543839           23632.0              23636.3
+SGD-Based                      88.8               8.014462           23634.0              23636.3
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               5.622271           27394.0              31488.9
+LFU                            99.2               5.622271           31487.0              31488.9
+Greedy Knapsack                99.2               5.622271           31487.0              31488.9
+SGD-Based                      99.2               5.622271           27394.0              31488.9
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               7.631902           23208.0              26299.2
+LFU                            99.2               7.631902           23208.0              26299.2
+Greedy Knapsack                99.2               7.631902           23208.0              26299.2
+SGD-Based                      99.2               7.631902           23208.0              26299.2
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               7.539375           29660.0              30799.0
+LFU                            99.2               7.539375           30798.0              30799.0
+Greedy Knapsack                99.2               7.539375           30798.0              30799.0
+SGD-Based                      99.2               7.539375           29660.0              30799.0
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            90.4              16.299137           24758.0              24759.7
+LFU                            98.8               9.587728           24757.0              24759.7
+Greedy Knapsack                98.8               9.587728           24757.0              24759.7
+SGD-Based                      90.4              16.299137           24758.0              24759.7
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.6               2.039452           26305.0              31930.4
+LFU                            99.6               6.519559           31927.0              31930.4
+Greedy Knapsack                99.6               2.039452           26305.0              31930.4
+SGD-Based                      99.6               2.039452           26305.0              31930.4
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2              10.546875           16238.0              23926.5
+LFU                            99.2              10.546875           20663.0              23926.5
+Greedy Knapsack                99.2              10.546875           20663.0              23926.5
+SGD-Based                      99.2              10.546875           16238.0              23926.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8              10.054541           29749.0              31149.8
+LFU                            99.6               3.936448           31148.0              31149.8
+Greedy Knapsack                99.6               3.936448           31148.0              31149.8
+SGD-Based                      98.8              10.054541           29749.0              31149.8
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               6.925881           29307.0              29561.5
+LFU                            99.6               4.799514           21796.0              29561.5
+Greedy Knapsack                99.6               4.799514           21796.0              29561.5
+SGD-Based                      99.2               6.925881           29307.0              29561.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            94.4               2.363706           22953.0              22954.6
+LFU                           100.0               0.000000           22954.0              22954.6
+Greedy Knapsack               100.0               0.000000           22954.0              22954.6
+SGD-Based                      94.4               2.363706           22953.0              22954.6
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               8.622719           26496.0              34763.6
+LFU                            99.6               4.208358           28090.0              34763.6
+Greedy Knapsack                99.6               4.208358           28090.0              34763.6
+SGD-Based                      99.2               8.622719           26496.0              34763.6
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            99.2               8.497066           20288.0              26004.5
+LFU                            99.6               4.593008           26003.0              26004.5
+Greedy Knapsack                99.6               4.593008           26003.0              26004.5
+SGD-Based                      99.2               8.497066           20288.0              26004.5
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8              10.139465           21003.0              22176.2
+LFU                            99.6               2.450057           22176.0              22176.2
+Greedy Knapsack                99.6               2.450057           22176.0              22176.2
+SGD-Based                      98.8              10.139465           21003.0              22176.2
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            90.0               7.508834           21053.0              21057.9
+LFU                           100.0               0.000000           21057.0              21057.9
+Greedy Knapsack               100.0               0.000000           21057.0              21057.9
+SGD-Based                      90.0               7.508834           21053.0              21057.9
+
+--- Iteration ---
+                 Cache Hit Rate (%)  Latency Reduction (%)  Cache Usage (KB)  Max Cache Size (KB)
+LRU                            98.8              14.640884           20194.0              21952.1
+LFU                            99.2              10.220994           21952.0              21952.1
+Greedy Knapsack                99.2              10.220994           21952.0              21952.1
+SGD-Based                      98.8              14.640884           20194.0              21952.1
+

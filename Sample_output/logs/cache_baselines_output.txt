@@ -1,0 +1,217 @@
+Total dataset size: 219521.0 KB
+New cache capacity: 21952 KB
+
+LFU Sorted Resources (Highest Frequency First):
+            resource  frequency
+ /small_images_1.dat         91
+ /small_images_2.dat         27
+        /css_100.dat         24
+ /small_images_3.dat         16
+ /small_images_4.dat         12
+ /small_images_5.dat         11
+ /small_images_7.dat          7
+ /small_images_6.dat          7
+/small_images_14.dat          5
+ /small_images_8.dat          5
+/small_images_13.dat          3
+ /small_images_9.dat          3
+/small_images_24.dat          3
+/small_images_16.dat          3
+/small_images_21.dat          2
+/small_images_10.dat          2
+/small_images_27.dat          2
+/small_images_22.dat          2
+     /scripts_70.dat          2
+/small_images_12.dat          2
+/large_images_36.dat          1
+/large_images_34.dat          1
+/small_images_19.dat          1
+/small_images_18.dat          1
+/small_images_28.dat          1
+/small_images_25.dat          1
+/large_images_31.dat          1
+/small_images_29.dat          1
+/large_images_42.dat          1
+/large_images_40.dat          1
+/large_images_46.dat          1
+      /videos_52.dat          1
+/large_images_38.dat          1
+/large_images_37.dat          1
+/small_images_11.dat          1
+/small_images_15.dat          1
+     /scripts_65.dat          1
+         /css_84.dat          1
+      /videos_55.dat          1
+      /videos_53.dat          1
+     /scripts_77.dat          1
+/small_images_26.dat          0
+/small_images_17.dat          0
+/small_images_20.dat          0
+/large_images_35.dat          0
+/large_images_33.dat          0
+/small_images_30.dat          0
+/large_images_32.dat          0
+/small_images_23.dat          0
+/large_images_44.dat          0
+/large_images_47.dat          0
+/large_images_45.dat          0
+      /videos_51.dat          0
+/large_images_50.dat          0
+/large_images_49.dat          0
+      /videos_54.dat          0
+      /videos_57.dat          0
+      /videos_58.dat          0
+      /videos_59.dat          0
+      /videos_56.dat          0
+      /videos_60.dat          0
+     /scripts_61.dat          0
+     /scripts_63.dat          0
+     /scripts_62.dat          0
+/large_images_48.dat          0
+/large_images_43.dat          0
+/large_images_39.dat          0
+/large_images_41.dat          0
+     /scripts_68.dat          0
+     /scripts_67.dat          0
+     /scripts_66.dat          0
+     /scripts_64.dat          0
+     /scripts_73.dat          0
+     /scripts_74.dat          0
+     /scripts_71.dat          0
+     /scripts_69.dat          0
+     /scripts_76.dat          0
+     /scripts_75.dat          0
+     /scripts_79.dat          0
+     /scripts_78.dat          0
+     /scripts_80.dat          0
+         /css_81.dat          0
+         /css_82.dat          0
+     /scripts_72.dat          0
+         /css_83.dat          0
+         /css_85.dat          0
+         /css_87.dat          0
+         /css_86.dat          0
+         /css_89.dat          0
+         /css_90.dat          0
+         /css_91.dat          0
+         /css_88.dat          0
+         /css_92.dat          0
+         /css_93.dat          0
+         /css_95.dat          0
+         /css_94.dat          0
+         /css_96.dat          0
+         /css_97.dat          0
+         /css_98.dat          0
+         /css_99.dat          0
+
+Greedy Knapsack Sorted Resources (Highest Value-to-Size Ratio First):
+            resource  value_ratio
+ /small_images_1.dat    43.468750
+        /css_100.dat    33.350649
+ /small_images_2.dat     6.555556
+ /small_images_3.dat     5.028571
+ /small_images_5.dat     4.205882
+ /small_images_4.dat     3.933333
+ /small_images_7.dat     3.343750
+     /scripts_70.dat     2.523810
+/small_images_21.dat     1.750000
+ /small_images_6.dat     1.738462
+/small_images_13.dat     1.709677
+/small_images_16.dat     1.629808
+ /small_images_9.dat     1.450000
+/small_images_14.dat     1.138211
+/small_images_27.dat     1.086538
+     /scripts_65.dat     1.019048
+ /small_images_8.dat     0.948963
+         /css_84.dat     0.724138
+/small_images_10.dat     0.613333
+/small_images_22.dat     0.611429
+/small_images_24.dat     0.571429
+/small_images_28.dat     0.562500
+/small_images_12.dat     0.511628
+     /scripts_77.dat     0.484444
+/small_images_19.dat     0.457490
+/small_images_15.dat     0.450000
+/small_images_29.dat     0.302778
+/small_images_18.dat     0.252273
+/small_images_25.dat     0.152455
+/small_images_11.dat     0.147959
+/large_images_42.dat     0.036713
+/large_images_34.dat     0.033309
+/large_images_31.dat     0.024944
+/large_images_40.dat     0.015396
+/large_images_36.dat     0.013239
+/large_images_37.dat     0.012146
+/large_images_46.dat     0.010899
+/large_images_38.dat     0.008609
+      /videos_52.dat     0.000108
+      /videos_55.dat     0.000079
+      /videos_53.dat     0.000056
+/small_images_26.dat     0.000000
+/small_images_17.dat     0.000000
+/small_images_20.dat     0.000000
+/large_images_35.dat     0.000000
+/large_images_33.dat     0.000000
+/small_images_30.dat     0.000000
+/large_images_32.dat     0.000000
+/small_images_23.dat     0.000000
+/large_images_44.dat     0.000000
+/large_images_47.dat     0.000000
+/large_images_45.dat     0.000000
+      /videos_51.dat     0.000000
+/large_images_50.dat     0.000000
+/large_images_49.dat     0.000000
+      /videos_54.dat     0.000000
+      /videos_57.dat     0.000000
+      /videos_58.dat     0.000000
+      /videos_59.dat     0.000000
+      /videos_56.dat     0.000000
+      /videos_60.dat     0.000000
+     /scripts_61.dat     0.000000
+     /scripts_63.dat     0.000000
+     /scripts_62.dat     0.000000
+/large_images_48.dat     0.000000
+/large_images_43.dat     0.000000
+/large_images_39.dat     0.000000
+/large_images_41.dat     0.000000
+     /scripts_68.dat     0.000000
+     /scripts_67.dat     0.000000
+     /scripts_66.dat     0.000000
+     /scripts_64.dat     0.000000
+     /scripts_73.dat     0.000000
+     /scripts_74.dat     0.000000
+     /scripts_71.dat     0.000000
+     /scripts_69.dat     0.000000
+     /scripts_76.dat     0.000000
+     /scripts_75.dat     0.000000
+     /scripts_79.dat     0.000000
+     /scripts_78.dat     0.000000
+     /scripts_80.dat     0.000000
+         /css_81.dat     0.000000
+         /css_82.dat     0.000000
+     /scripts_72.dat     0.000000
+         /css_83.dat     0.000000
+         /css_85.dat     0.000000
+         /css_87.dat     0.000000
+         /css_86.dat     0.000000
+         /css_89.dat     0.000000
+         /css_90.dat     0.000000
+         /css_91.dat     0.000000
+         /css_88.dat     0.000000
+         /css_92.dat     0.000000
+         /css_93.dat     0.000000
+         /css_95.dat     0.000000
+         /css_94.dat     0.000000
+         /css_96.dat     0.000000
+         /css_97.dat     0.000000
+         /css_98.dat     0.000000
+         /css_99.dat     0.000000
+Cache comparison results saved.
+
+LRU Cache: ['/small_images_1.dat', '/small_images_2.dat', '/small_images_3.dat', '/small_images_4.dat', '/small_images_5.dat', '/small_images_6.dat', '/small_images_7.dat', '/small_images_8.dat', '/small_images_9.dat', '/small_images_10.dat', '/small_images_11.dat', '/small_images_12.dat', '/small_images_13.dat', '/small_images_14.dat', '/small_images_15.dat', '/small_images_16.dat', '/small_images_17.dat', '/small_images_18.dat', '/small_images_19.dat', '/small_images_20.dat', '/small_images_21.dat', '/small_images_22.dat', '/small_images_23.dat', '/small_images_24.dat', '/small_images_25.dat', '/small_images_26.dat', '/small_images_27.dat', '/small_images_28.dat', '/small_images_29.dat', '/small_images_30.dat', '/large_images_31.dat', '/large_images_32.dat', '/large_images_33.dat', '/large_images_34.dat', '/large_images_35.dat', '/large_images_36.dat', '/large_images_37.dat', '/large_images_38.dat', '/large_images_39.dat', '/large_images_40.dat', '/large_images_41.dat', '/large_images_42.dat', '/large_images_43.dat', '/large_images_44.dat', '/large_images_45.dat', '/large_images_46.dat', '/large_images_47.dat', '/large_images_48.dat', '/large_images_49.dat', '/large_images_50.dat', '/videos_54.dat', '/scripts_61.dat', '/scripts_62.dat', '/scripts_63.dat', '/scripts_64.dat', '/scripts_65.dat', '/scripts_66.dat', '/scripts_67.dat', '/scripts_68.dat', '/scripts_69.dat', '/scripts_70.dat', '/scripts_71.dat', '/scripts_72.dat', '/scripts_73.dat', '/scripts_74.dat', '/scripts_75.dat', '/scripts_76.dat', '/scripts_77.dat', '/scripts_78.dat', '/scripts_79.dat', '/scripts_80.dat', '/css_81.dat', '/css_82.dat', '/css_83.dat', '/css_84.dat', '/css_85.dat', '/css_86.dat', '/css_87.dat', '/css_88.dat', '/css_89.dat', '/css_90.dat', '/css_91.dat', '/css_92.dat', '/css_93.dat', '/css_94.dat', '/css_95.dat', '/css_96.dat', '/css_97.dat', '/css_98.dat', '/css_99.dat', '/css_100.dat']
+
+LFU Cache: ['/small_images_1.dat', '/small_images_2.dat', '/css_100.dat', '/small_images_3.dat', '/small_images_4.dat', '/small_images_5.dat', '/small_images_7.dat', '/small_images_6.dat', '/small_images_14.dat', '/small_images_8.dat', '/small_images_13.dat', '/small_images_9.dat', '/small_images_24.dat', '/small_images_16.dat', '/small_images_21.dat', '/small_images_10.dat', '/small_images_27.dat', '/small_images_22.dat', '/scripts_70.dat', '/small_images_12.dat', '/large_images_36.dat', '/large_images_34.dat', '/small_images_19.dat', '/small_images_18.dat', '/small_images_28.dat', '/small_images_25.dat', '/large_images_31.dat', '/small_images_29.dat', '/large_images_42.dat', '/large_images_40.dat', '/large_images_46.dat', '/videos_52.dat', '/large_images_38.dat', '/large_images_37.dat', '/small_images_11.dat', '/small_images_15.dat', '/scripts_65.dat', '/css_84.dat', '/scripts_77.dat', '/small_images_26.dat', '/small_images_17.dat', '/small_images_20.dat', '/large_images_35.dat', '/large_images_33.dat', '/small_images_30.dat', '/large_images_32.dat', '/small_images_23.dat', '/large_images_44.dat', '/large_images_47.dat', '/large_images_45.dat', '/large_images_50.dat', '/large_images_49.dat', '/scripts_61.dat', '/scripts_63.dat', '/scripts_62.dat', '/large_images_48.dat', '/scripts_68.dat', '/scripts_67.dat', '/scripts_66.dat', '/scripts_64.dat', '/scripts_73.dat', '/scripts_74.dat', '/scripts_71.dat', '/scripts_80.dat']
+
+Greedy Knapsack Cache: ['/small_images_1.dat', '/css_100.dat', '/small_images_2.dat', '/small_images_3.dat', '/small_images_5.dat', '/small_images_4.dat', '/small_images_7.dat', '/scripts_70.dat', '/small_images_21.dat', '/small_images_6.dat', '/small_images_13.dat', '/small_images_16.dat', '/small_images_9.dat', '/small_images_14.dat', '/small_images_27.dat', '/scripts_65.dat', '/small_images_8.dat', '/css_84.dat', '/small_images_10.dat', '/small_images_22.dat', '/small_images_24.dat', '/small_images_28.dat', '/small_images_12.dat', '/scripts_77.dat', '/small_images_19.dat', '/small_images_15.dat', '/small_images_29.dat', '/small_images_18.dat', '/small_images_25.dat', '/small_images_11.dat', '/large_images_42.dat', '/large_images_34.dat', '/large_images_31.dat', '/large_images_40.dat', '/large_images_36.dat', '/large_images_37.dat', '/large_images_46.dat', '/large_images_38.dat', '/videos_52.dat', '/small_images_26.dat', '/small_images_17.dat', '/small_images_20.dat', '/large_images_35.dat', '/large_images_33.dat', '/small_images_30.dat', '/large_images_32.dat', '/small_images_23.dat', '/large_images_44.dat', '/large_images_47.dat', '/large_images_45.dat', '/large_images_50.dat', '/large_images_49.dat', '/scripts_61.dat', '/scripts_63.dat', '/scripts_62.dat', '/large_images_48.dat', '/scripts_68.dat', '/scripts_67.dat', '/scripts_66.dat', '/scripts_64.dat', '/scripts_73.dat', '/scripts_74.dat', '/scripts_71.dat', '/scripts_80.dat']
+
+SGD-Based Cache: ['/small_images_1.dat', '/small_images_2.dat', '/small_images_3.dat', '/small_images_4.dat', '/small_images_5.dat', '/small_images_6.dat', '/small_images_7.dat', '/small_images_8.dat', '/small_images_9.dat', '/small_images_10.dat', '/small_images_11.dat', '/small_images_12.dat', '/small_images_13.dat', '/small_images_14.dat', '/small_images_15.dat', '/small_images_16.dat', '/small_images_17.dat', '/small_images_18.dat', '/small_images_19.dat', '/small_images_20.dat', '/small_images_21.dat', '/small_images_22.dat', '/small_images_23.dat', '/small_images_24.dat', '/small_images_25.dat', '/small_images_26.dat', '/small_images_27.dat', '/small_images_28.dat', '/small_images_29.dat', '/small_images_30.dat', '/large_images_31.dat', '/large_images_32.dat', '/large_images_33.dat', '/large_images_34.dat', '/large_images_35.dat', '/large_images_36.dat', '/large_images_37.dat', '/large_images_38.dat', '/large_images_39.dat', '/large_images_40.dat', '/large_images_41.dat', '/large_images_42.dat', '/large_images_43.dat', '/large_images_44.dat', '/large_images_45.dat', '/large_images_46.dat', '/large_images_47.dat', '/large_images_48.dat', '/large_images_49.dat', '/large_images_50.dat', '/videos_54.dat', '/scripts_61.dat', '/scripts_62.dat', '/scripts_63.dat', '/scripts_64.dat', '/scripts_65.dat', '/scripts_66.dat', '/scripts_67.dat', '/scripts_68.dat', '/scripts_69.dat', '/scripts_70.dat', '/scripts_71.dat', '/scripts_72.dat', '/scripts_73.dat', '/scripts_74.dat', '/scripts_75.dat', '/scripts_76.dat', '/scripts_77.dat', '/scripts_78.dat', '/scripts_79.dat', '/scripts_80.dat', '/css_81.dat', '/css_82.dat', '/css_83.dat', '/css_84.dat', '/css_85.dat', '/css_86.dat', '/css_87.dat', '/css_88.dat', '/css_89.dat', '/css_90.dat', '/css_91.dat', '/css_92.dat', '/css_93.dat', '/css_94.dat', '/css_95.dat', '/css_96.dat', '/css_97.dat', '/css_98.dat', '/css_99.dat', '/css_100.dat']

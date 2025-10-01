@@ -48,7 +48,7 @@ with open(COMPREHENSIVE_FILE, "w") as f:
 # Start Flask server in background and redirect output to log file
 with open(LOG_FILE, "w") as log_file:
     server_process = subprocess.Popen(
-        ["python", "server.py"],
+        ["python", "src/server/server.py"],
         stdout=log_file,
         stderr=log_file
     )
@@ -58,11 +58,11 @@ time.sleep(2)
 
 try:
     for i in tqdm(range(1, NUM_ITERATIONS + 1), desc="Pipeline Execution"):
-        run_script("simulate_requests.py")
-        run_script("data_preprocessing.py")
-        run_script("sgd_cache_optimizer.py")
-        run_script("cache_baselines.py")
-        run_script("analyze_results.py")
+        run_script("src/pipeline/simulate_requests.py")
+        run_script("src/data/data_preprocessing.py")
+        run_script("src/models/sgd_cache_optimizer.py")
+        run_script("src/models/cache_baselines.py")
+        run_script("src/analysis/analyze_results.py")
         append_metrics(i)
 
     calculate_average()
